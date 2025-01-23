@@ -8,15 +8,17 @@ terraform {
 }
 
 provider "google" {
-  credentials = "./Week-1/terrademo/keys/my-creds.json"
-  project = "<PROJECT_ID>"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  # Use reference variable from project, region & zone
+  credentials = file(var.credentials) # call the credentials using file() function
+  project = var.project
+  region  = var.region
+  zone    = var.zone
 }
 
-resource "google_storage_bucket" "auto-expire" {
-  name          = "<PROJECT_ID>-terra-bucket"
-  location      = "US"
+resource "google_storage_bucket" "demo-bucket" {
+  # Use reference variable from gcs_bucket_name & location
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -27,4 +29,10 @@ resource "google_storage_bucket" "auto-expire" {
       type = "AbortIncompleteMultipartUpload"
     }
   }
+}
+
+resource "google_bigquery_dataset" "demo_dataset" {
+  # Use reference variable from bg_dataset_name & location
+  dataset_id = var.bg_dataset_name
+  location = var.location
 }

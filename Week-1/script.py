@@ -1,1 +1,0 @@
-print("Day-1 | Week-1")
