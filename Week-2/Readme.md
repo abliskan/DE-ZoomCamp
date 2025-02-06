@@ -27,7 +27,8 @@ docker run --pull=always --rm -it -p 8080:8080 --user=root kestra/kestra:develop
 ```
 curl -o docker-compose.yml \
 https://raw.githubusercontent.com/kestra-io/kestra/develop/docker-compose.yml
-``` <br>
+```
+<br>
 or use the current docker-compose setup <br>
 ```
 networks:
@@ -126,13 +127,15 @@ volumes:
     name: vol-kestra-metadata
   vol-kestra-data:
     name: vol-kestra-data
-``` <br>
+```
+<br>
 2) Use the following command to start the Kestra server<br>
 ```
 docker-compose up -d
-``` <br>
+```
+<br>
 3) Open the URL http://localhost:8080 in your browser to launch the UI.
-4) Use the following command to stop the Kestra server <br>
+4) Use the following command to stop the Kestra server
 ```
 docker-compose down
 ```
