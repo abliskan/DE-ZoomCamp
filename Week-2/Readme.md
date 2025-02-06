@@ -23,13 +23,13 @@ docker run --pull=always --rm -it -p 8080:8080 --user=root kestra/kestra:develop
 ```
 
 ### Docker-compose setup 
-1) Download the Docker Compose file using the following command on Linux and macOS
+1) Get docker-compose from kestra doc
+<-> Download the Docker Compose file using the following command on Linux and macOS
 ```
 curl -o docker-compose.yml \
 https://raw.githubusercontent.com/kestra-io/kestra/develop/docker-compose.yml
 ```
-<br>
-or use the current docker-compose setup <br>
+<-> or use the current docker-compose setup <br>
 ```
 networks:
   local:
@@ -128,14 +128,12 @@ volumes:
   vol-kestra-data:
     name: vol-kestra-data
 ```
-<br>
-2) Use the following command to start the Kestra server<br>
+<-> Use the following command to start the Kestra server<br>
 ```
 docker-compose up -d
 ```
-<br>
-3) Open the URL http://localhost:8080 in your browser to launch the UI.
-4) Use the following command to stop the Kestra server
+<-> Open the URL http://localhost:8080 in your browser to launch the UI.
+<-> Use the following command to stop the Kestra server
 ```
 docker-compose down
 ```
