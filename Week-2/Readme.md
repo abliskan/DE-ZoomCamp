@@ -132,23 +132,24 @@ volumes:
 ```
 docker-compose up -d
 ```
-<-> Open the URL http://localhost:8080 in your browser to launch the UI.
+<-> Open the URL http://localhost:8080 in your browser to launch the UI. <br>
 <-> Use the following command to stop the Kestra server
 ```
 docker-compose down
 ```
-<br>
+(next)
+
 ### Ingest NYC Taxi data into PostgreSQL
-<comming soon><br>
+(comming soon)
 
 ### Ingest NYC Taxi data into datalake(GCS) and data warehouse (Bigquery)
-<comming soon><br>
+(comming soon)
 
 ### Integration with Dbt for data transform
-<comming soon><br>
+(comming soon)
 
 ### Deploy kestra orchestration to the cloud
-<comming soon><br>
+(comming soon)
 
 ## Homework 
 See the [howework-wk2 folder](https://github.com/abliskan/DE-ZoomCamp/blob/main/Week-2/howework-wk2/Readme.md)
