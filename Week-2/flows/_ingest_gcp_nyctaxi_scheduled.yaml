@@ -1,7 +1,8 @@
-id: extract_gcp_nyctaxi
+id: extract_gcp_taxi_scheduled
 namespace: zoomcamp
 description: |
-  The CSV Data used in the course: https://github.com/DataTalksClub/nyc-tlc-data/releases
+  Best to add a label `backfill:true` from the UI to track executions created via a backfill.
+  CSV data used here comes from: https://github.com/DataTalksClub/nyc-tlc-data/releases
 
 inputs:
   - id: taxi
@@ -10,24 +11,11 @@ inputs:
     values: [yellow, green]
     defaults: green
 
-  - id: year
-    type: SELECT
-    displayName: Select year
-    values: ["2019", "2020", "2021"]
-    defaults: "2019"
-    allowCustomValue: true # allows you to type 2021 from the UI for the homework 🤗
-
-  - id: month
-    type: SELECT
-    displayName: Select month
-    values: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
-    defaults: "01"
-
 variables:
-  file: "{{inputs.taxi}}_tripdata_{{inputs.year}}-{{inputs.month}}.csv"
+  file: "{{inputs.taxi}}_tripdata_{{trigger.date | date('yyyy-MM')}}.csv"
   gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/{{vars.file}}"
-  table: "{{kv('GCP_DATASET')}}.{{inputs.taxi}}_tripdata_{{inputs.year}}_{{inputs.month}}"
-  data: "{{outputs.extract.outputFiles[inputs.taxi ~ '_tripdata_' ~ inputs.year ~ '-' ~ inputs.month ~ '.csv']}}"
+  table: "{{kv('GCP_DATASET')}}.{{inputs.taxi}}_tripdata_{{trigger.date | date('yyyy_MM')}}"
+  data: "{{outputs.extract.outputFiles[inputs.taxi ~ '_tripdata_' ~ (trigger.date | date('yyyy-MM')) ~ '.csv']}}"
 
 tasks:
   - id: set_label
@@ -236,8 +224,7 @@ tasks:
 
   - id: purge_files
     type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
-    description: If you'd like to explore Kestra outputs, disable it.
-    disabled: false
+    description: To avoid cluttering your storage, we will remove the downloaded files
 
 pluginDefaults:
   - type: io.kestra.plugin.gcp
@@ -246,3 +233,16 @@ pluginDefaults:
       projectId: "{{kv('GCP_PROJECT_ID')}}"
       location: "{{kv('GCP_LOCATION')}}"
       bucket: "{{kv('GCP_BUCKET_NAME')}}"
+
+triggers:
+  - id: green_schedule
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "0 9 1 * *"
+    inputs:
+      taxi: green
+
+  - id: yellow_schedule
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "0 10 1 * *"
+    inputs:
+      taxi: yellow
