@@ -52,7 +52,7 @@ doubling the estimated bytes processed.
 --> My Answer: option number 1
 
 ## Question 4:
-How many records have a fare_amount of 0?
+How many records have a fare_amount of 0? <br>
 (1) 128,210 <br>
 (2) 546,578 <br>
 (3) 20,188,016 <br>
@@ -73,7 +73,7 @@ What is the best strategy to make an optimized table in Big Query if your query 
 Write a query to retrieve the distinct VendorIDs between tpep_dropoff_datetime
 2024-03-01 and 2024-03-15 (inclusive)</br>
 Use the materialized table you created earlier in your from clause and note the estimated bytes. Now change the table in the from clause to the partitioned table you created for question 5 and note the estimated bytes processed. What are these values? </br>
-Choose the answer which most closely matches.</br> 
+Choose the answer which most closely matches. </br> 
 (1) 12.47 MB for non-partitioned table and 326.42 MB for the partitioned table <br>
 (2) 310.24 MB for non-partitioned table and 26.84 MB for the partitioned table <br>
 (3) 5.87 MB for non-partitioned table and 0 MB for the partitioned table <br>
@@ -99,5 +99,8 @@ It is best practice in Big Query to always cluster your data: <br>
 
 ## (Bonus: Not worth points) Question 9:
 No Points: Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
-
---> My Answer: option number 2
+```
+SELECT COUNT(*)
+FROM 'dezoomcamp_yellow_taxi.homework.materialized_yellow_tripdata';
+-- bytes processed: 0 bytes
+```
