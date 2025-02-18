@@ -34,5 +34,8 @@ BigQuery is Google’s fully managed, serverless data warehouse that enables sca
 ## BigQuery: Machine Learning 
 (Comming soon)
 
+## Raw note (view only)
+See more on [google-doc-wk3-note](https://docs.google.com/document/d/1nYeyd8mtScRTXiKez0XXE5Pk4nQQ4tfXW8EtaXfzK9g/edit?usp=sharing)
+
 ## Homework 
 See the [howework-wk3 folder](https://github.com/abliskan/DE-ZoomCamp/blob/main/Week-3/homework-wk3/Readme.md)
