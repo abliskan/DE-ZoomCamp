@@ -48,7 +48,7 @@ from {{ source('raw_nyc_tripdata', 'ext_green_taxi' ) }}
 (2) `select * from dtc_zoomcamp_2025.my_nyc_tripdata.ext_green_taxi` <br>
 (3) `select * from myproject.raw_nyc_tripdata.ext_green_taxi` <br>
 (4) `select * from myproject.my_nyc_tripdata.ext_green_taxi` <br>
-- `select * from dtc_zoomcamp_2025.raw_nyc_tripdata.green_taxi` <br>
+(5) `select * from dtc_zoomcamp_2025.raw_nyc_tripdata.green_taxi` <br>
 
 --> My Answer: option number 1
 
@@ -79,7 +79,7 @@ What would you change to accomplish that in a such way that command line argumen
 
 Considering the data lineage below **and** that taxi_zone_lookup is the **only** materialization build (from a .csv seed file):
 
-![image](./homework_q2.png)
+![image](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/cohorts/2025/04-analytics-engineering/homework_q2.png)
 
 Select the option that does **NOT** apply for materializing `fct_taxi_monthly_zone_revenue`:
 
