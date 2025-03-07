@@ -32,11 +32,11 @@ Read the October 2024 Yellow into a Spark Dataframe.
 
 Repartition the Dataframe to 4 partitions and save it to parquet.
 
-What is the average size of the Parquet (ending with .parquet extension) Files that were created (in MB)? Select the answer which most closely matches.
-(1) 6MB
-(2) 25MB
-(3) 75MB
-(4) 100MB
+What is the average size of the Parquet (ending with .parquet extension) Files that were created (in MB)? Select the answer which most closely matches. <br>
+(1) 6MB <br>
+(2) 25MB <br>
+(3) 75MB <br>
+(4) 100MB <br>
 
 --> My Answer: option number 2
 
@@ -44,31 +44,31 @@ What is the average size of the Parquet (ending with .parquet extension) Files t
 
 How many taxi trips were there on the 15th of October?
 
-Consider only trips that started on the 15th of October.
-(1) 85,567
-(2) 105,567
-(3) 125,567
-(4) 145,567
+Consider only trips that started on the 15th of October. <br>
+(1) 85,567 <br>
+(2) 105,567 <br>
+(3) 125,567 <br>
+(4) 145,567 <br>
 
 --> My Answer: option number 3 (128893)
 
 ## Question 4: Longest trip
 
-What is the length of the longest trip in the dataset in hours?
-(1) 122
-(2) 142
-(3) 162
-(4) 182
+What is the length of the longest trip in the dataset in hours? <br>
+(1) 122 <br>
+(2) 142 <br>
+(3) 162 <br>
+(4) 182 <br>
 
 --> My Answer: option number 3 (6 days)
 
 ## Question 5: User Interface
 
 Spark’s User Interface which shows the application's dashboard runs on which local port?
-(1) 80
-(2) 443
-(3) 4040
-(4) 8080
+(1) 80 <br>
+(2) 443 <br>
+(3) 4040 <br>
+(4) 8080 <br>
 
 --> My Answer: option number 4
 
@@ -80,10 +80,10 @@ Load the zone lookup data into a temp view in Spark:
 wget https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv
 ```
 
-Using the zone lookup data and the Yellow October 2024 data, what is the name of the LEAST frequent pickup location Zone?
-(1) overnor's Island/Ellis Island/Liberty Island
-(2) Arden Heights
-(3) Rikers Island
-(1) Jamaica Bay
+Using the zone lookup data and the Yellow October 2024 data, what is the name of the LEAST frequent pickup location Zone? <br>
+(1) Governor's Island/Ellis Island/Liberty Island <br>
+(2) Arden Heights <br>
+(3) Rikers Island <br>
+(1) Jamaica Bay <br>
 
 --> My Answer: option number 1
